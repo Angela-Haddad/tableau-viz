@@ -13,7 +13,6 @@
       flex-direction: column;
       align-items: center;
       padding: 20px;
-      min-width: 1040px;
     }
     h1 {
       margin-bottom: 20px;
@@ -22,18 +21,16 @@
     }
     .viz-container {
       background: white;
-      padding: 16px;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 1000px;
-      height: 800px;
+      overflow: hidden;
     }
   </style>
 </head>
 <body>
   <h1>I-75 District 1 OD Analysis</h1>
   <div class="viz-container">
-    <div class='tableauPlaceholder' id='viz1772823343792' style='position: relative; width: 1000px; height: 800px;'>
+    <div class='tableauPlaceholder' id='viz1772823343792' style='position: relative'>
       <noscript>
         <a href='#'>
           <img alt=' ' src='https://public.tableau.com/static/images/I-/I-75District1ODAnalysis/SB_sankey/1_rss.png' style='border: none' />
@@ -60,8 +57,10 @@
   <script type='text/javascript'>
     var divElement = document.getElementById('viz1772823343792');
     var vizElement = divElement.getElementsByTagName('object')[0];
+    // 1000x800 is your dashboard size
+    // Add ~100px for the tab bar + title Tableau renders above the viz
     vizElement.style.width = '1000px';
-    vizElement.style.height = '800px';
+    vizElement.style.height = '900px';
     var scriptElement = document.createElement('script');
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
     vizElement.parentNode.insertBefore(scriptElement, vizElement);
